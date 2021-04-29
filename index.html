@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='css/snake.css'>
+    <title>Snake Game</title>
+</head>
+<body>
+    <main>
+        <div class="header">
+            <p style="display: flex; justify-content: center; align-items: center; font-size: 50px; font-weight: bold;">
+                <img src="imgs/apple.png" width="50px"> <span id="current-score">0</span>
+            </p>
+        </div>
+        
+        <canvas id="snake" width="512" height="512"></canvas>
+    </main>
+    
+    <div id="key" style="display: none;">
+        <img src="imgs/keys.png" width="200px">
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/snake.js"></script>
+</body>
+</html>
