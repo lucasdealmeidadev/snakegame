@@ -4,7 +4,7 @@ Recriando o jogo da cobrinha com **JavaScript**. Esse projeto foi uma ampliaçã
 
 Foram adicionados os seguintes recursos ao projeto: 
 - Interface do game foi totalmente remodelada;
-- Utilização da biblioteca SweetAlert para apresentar informações ao usuário que ocorrem durante a game; 
+- Utilização da biblioteca SweetAlert para apresentar informações ao usuário que ocorrem durante o game; 
 - Score com a quantidade de maças que foram coletadas;
 - Efeito de áudio ao movimentar a snake;
 - Efeito de áudio ao ultrapassar o limite do mapa;
