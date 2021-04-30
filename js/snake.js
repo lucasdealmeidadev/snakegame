@@ -19,13 +19,13 @@ let food = {
     y: Math.floor(Math.random() * 15 + 1) * box
 }
 
-createBackground = () => {
+const createBackground = () => {
     const background = new Image();
     background.src = 'imgs/garden.jpg';
     context.drawImage(background, 0, 0, 16 * box, 16 * box);  
 }
 
-createSnake = () => {
+const createSnake = () => {
     let score = 0;
 
     for (let i=0; i < snake.length; i++){
@@ -43,13 +43,13 @@ createSnake = () => {
     document.getElementById('current-score').innerText = score;
 }
 
-drawFood = () => {
+const drawFood = () => {
     const apple = new Image();
     apple.src = 'imgs/apple.png';
     context.drawImage(apple, food.x, food.y, box, box);  
 }
 
-update = (event) => {
+const update = (event) => {
     key.style.display = 'none';
 
     if(event.keyCode == 37 && direction != 'right'){
@@ -72,7 +72,7 @@ update = (event) => {
 
 document.addEventListener('keydown', update);
 
-gameOver = () => {
+const gameOver = () => {
     swal({
         title: 'Game Over :)',
         icon: 'error',
@@ -85,7 +85,7 @@ gameOver = () => {
     }); 
 }
 
-init = () => {
+const init = () => {
     swal({
         title: 'Snake Game (:',
         icon: 'imgs/init.png',
@@ -99,7 +99,7 @@ init = () => {
     });
 }
 
-startGame = () => {
+const startGame = () => {
     if(snake[0].x > 15 * box && direction == 'right') snake[0].x = 0;
     if(snake[0].y > 15 * box && direction == 'down')  snake[0].y = 0;
     if(snake[0].x < 0 && direction == 'left') snake[0].x = 16 * box;
