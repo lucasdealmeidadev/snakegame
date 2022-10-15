@@ -18,4 +18,4 @@ Foram adicionados os seguintes recursos ao projeto:
 
 ----------
 
-Desenvolvido por Lucas de Almeida Monteiro (:  👋  [ Entrar em contato!!](https://www.linkedin.com/in/lucas-almeida-145a4513a)
+Desenvolvido por Lucas de Almeida Monteiro (:  👋  [ Entrar em contato!!](https://www.linkedin.com/in/lucas-de-almeida-monteiro)
