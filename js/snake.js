@@ -1,15 +1,15 @@
 let canvas  = document.getElementById('snake');
 let context = canvas.getContext('2d');
 let key = document.getElementById('key');
+let pause = document.getElementById('pause');
+let control = false;
+let paused = true;
 let box = 32;
 let direction;
 let dead = new Audio();
 let eat = new Audio();
 let movements = new Audio();
 let snake = [];
-eat.src = 'audios/eat.mp3';
-dead.src = 'audios/dead.mp3';
-movements.src = 'audios/movements.mp3';
 snake[0] = {
     x: 8 * box,
     y: 8 * box
@@ -19,10 +19,28 @@ let food = {
     y: Math.floor(Math.random() * 15 + 1) * box
 }
 
+document.querySelector('canvas').addEventListener('keypress', (e) => {
+    console.log(e);
+});
+
+pause.addEventListener('click', () => {
+    const image = (!control) ? 'imgs/play.svg' : 'imgs/pause.svg';
+
+    if(!control){
+        control = true;
+        movements.volume = 0.0;
+    }else{
+        control = false;
+        movements.volume = 1.0;
+    }
+    paused = control;
+    document.querySelector('#pause img').src = image;
+});
+
 const createBackground = () => {
     const background = new Image();
     background.src = 'imgs/garden.jpg';
-    context.drawImage(background, 0, 0, 16 * box, 16 * box);  
+    context.drawImage(background, 0, 0, 16 * box, 16 * box);
 }
 
 const createSnake = () => {
@@ -50,9 +68,14 @@ const drawFood = () => {
 }
 
 const update = (event) => {
-    key.style.display = 'none';
+    if(key.style.display === 'block') {
+        key.style.display = 'none';
+        pause.style.pointerEvents = 'all';
+        pause.style.opacity = 'unset';
 
-    if(event.keyCode == 37 && direction != 'right'){
+        movements.volume = 1.0;
+    }
+    if(event.keyCode == 37 && direction !== 'right'){
         movements.play();
         direction = 'left';
     }
@@ -96,6 +119,14 @@ const init = () => {
         closeOnClickOutside: false,
     }).then(e => { 
         key.style.display = 'block';
+
+        paused = false;
+        direction = '';
+
+        eat.src = 'audios/eat.mp3';
+        dead.src = 'audios/dead.mp3';
+        movements.src = 'audios/movements.mp3';
+        movements.volume = 0.0;
     });
 }
 
@@ -116,6 +147,8 @@ const startGame = () => {
     createBackground();
     createSnake();
     drawFood();
+
+    if (paused) return;
 
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
