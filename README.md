@@ -6,6 +6,7 @@ Foram adicionados os seguintes recursos ao projeto:
 - Interface do game foi totalmente remodelada;
 - Utilização da biblioteca SweetAlert para apresentar informações ao usuário que ocorrem durante o game; 
 - Score com a quantidade de maças que foram coletadas;
+- Adicionado recurso de PLAY e PAUSE;
 - Efeito de áudio ao movimentar a snake;
 - Efeito de áudio ao ultrapassar o limite do mapa;
 - Efeito de áudio ao encostar na sua própria snake.
@@ -14,7 +15,7 @@ Foram adicionados os seguintes recursos ao projeto:
 
 ## Licença
 
-* Licenciado sob a licença MIT - veja [LICENSE](https://github.com/lucasdealmeidadev/snakegame/blob/main/LICENSE) para mais informações.
+* Licenciado sob a licença MIT - veja [LICENSE](https://github.com/lucasdealmeidadev/snakegame/blob/master/LICENSE) para mais informações.
 
 ----------
 
